@@ -82,9 +82,10 @@ const ProductList: React.FC = () => {
       },
       body: JSON.stringify(data),
     });
-
+    setTimeout(() => {
+    tg.close();
+  }, 500);
   }, [cart]);
-  tg.close();
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData);
