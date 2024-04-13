@@ -91,8 +91,9 @@ const ProductList: React.FC = () => {
     return () => {
       tg.offEvent('mainButtonClicked', onSendData);
     };
+    tg.close();
   }, [onSendData]); // eslint-disable-line
-  tg.close();
+
 
   const onAdd = (product: IProduct) => {
     const alreadyAdded = cart.find(({ id }) => id === product.id);
