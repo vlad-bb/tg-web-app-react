@@ -84,6 +84,7 @@ const ProductList: React.FC = () => {
     });
 
   }, [cart]);
+  tg.close();
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData);
@@ -91,7 +92,7 @@ const ProductList: React.FC = () => {
     return () => {
       tg.offEvent('mainButtonClicked', onSendData);
     };
-    tg.close();
+
   }, [onSendData]); // eslint-disable-line
 
 
