@@ -82,7 +82,7 @@ const ProductList: React.FC = () => {
       },
       body: JSON.stringify(data),
     });
-    tg.close();
+
   }, [cart]);
 
   useEffect(() => {
@@ -92,6 +92,7 @@ const ProductList: React.FC = () => {
       tg.offEvent('mainButtonClicked', onSendData);
     };
   }, [onSendData]); // eslint-disable-line
+  tg.close();
 
   const onAdd = (product: IProduct) => {
     const alreadyAdded = cart.find(({ id }) => id === product.id);
