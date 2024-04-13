@@ -63,13 +63,14 @@ const getTotalPrice = (cart: IProduct[]) => {
 
 const ProductList: React.FC = () => {
   const [cart, setCart] = useState<IProduct[]>([]);
-  const { tg, queryId } = useTelegram();
+  const { tg, queryId, user } = useTelegram();
 
   const onSendData = useCallback(() => {
     const data = {
       products: cart,
       totalPrice: getTotalPrice(cart),
       queryId,
+      user
     };
 
     // Vite
