@@ -82,6 +82,7 @@ const ProductList: React.FC = () => {
       },
       body: JSON.stringify(data),
     });
+    tg.close();
   }, [cart]);
 
   useEffect(() => {
