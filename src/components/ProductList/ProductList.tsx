@@ -69,8 +69,8 @@ const ProductList: React.FC = () => {
     const data = {
       products: cart,
       totalPrice: getTotalPrice(cart),
-      queryId,
-      user
+      queryId: queryId,
+      user: user
     };
 
     // Vite
